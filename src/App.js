@@ -15,34 +15,6 @@ import Header from './components/Header';
 
 function App() {
 
-  const theme ={
-    colors : {
-      heading:"rgba(25,25,29)",
-      text:"rgba(29,29,29,.8)",
-      white:"#fff",
-      black:"#212528",
-      helper:"#8490ff",
-      bg: "#d3d6d8",
-      footer_bg:"#0a1435",
-      btn:"rgb(98 84 243)",
-      border:"rgba(98,84,243,0.5)",
-      hr:"#fff",
-      gradient: "linear-gradient(0deg,rgb(132 144 255) 0%, rgb(98 189 252) 100%)",
-      shadow:"rgba(0,0,0,0.02) 0px 1px 3px 0px, rgba(27,31,35,0.15) 0px 0px 0px 1px;",
-      shadowSupport:"rgba(0,0,0,0.20) 0px 1px 4px"},
-
-    font:{
-      size1:"30px",
-      size2:"40px",
-      size3:"50px"
-    },
-
-    media:{
-      mobile:"768px",
-      tab:"998px"
-    },
-    };
-
   return (
     <>
     <ThemeProvider theme={theme}>
@@ -64,5 +36,33 @@ function App() {
     </>
   );
 };
+
+const theme ={
+  colors : {
+    heading:"rgba(25,25,29)",
+    text:"rgba(29,29,29,.8)",
+    white:"#fff",
+    black:"#212528",
+    helper:"#8490ff",
+    bg: "#d3d6d8",
+    footer_bg:"#0a1435",
+    btn:"rgb(98 84 243)",
+    border:"rgba(98,84,243,0.5)",
+    hr:"#fff",
+    gradient: "linear-gradient(0deg,rgb(132 144 255) 0%, rgb(98 189 252) 100%)",
+    shadow:"rgba(0,0,0,0.02) 0px 1px 3px 0px, rgba(27,31,35,0.15) 0px 0px 0px 1px;",
+    shadowSupport:"rgba(0,0,0,0.20) 0px 1px 4px"},
+
+  font:{
+    size1:"30px",
+    size2:"40px",
+    size3:"50px"
+  },
+
+  media:{
+    mobile:"768px",
+    tab:"998px"
+  },
+  };
 
 export default App;
