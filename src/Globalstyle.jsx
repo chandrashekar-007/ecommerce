@@ -43,7 +43,7 @@ h1,
 h2,
 h3,
 h4 {
-   font-family: "Work Sans", sans-serif;
+   font-family: "Montserrat", sans-serif;
 
 }
 
@@ -66,8 +66,18 @@ h3 {
   font-weight: 400;
 }
 
-p, button {
+p{
+  font-size: 2rem;
+}
+ button {
+  align-items: center;
+  display: flex;
+  text-align: center;
+  border: 1px solid purple;
+  border-radius: 5px;
+  padding: 15px 30px;
   color: ${({ theme }) => theme.colors.text};
+  background-color: ${({ theme }) => theme.colors.purple};
   font-size: 1.65rem;
   line-height: 1.5;
   font-weight:400;
@@ -85,11 +95,13 @@ li {
 ${"" /* resuable code section  */}
 
 .container {
+  margin-top:30px;
   max-width: 120rem;
   margin: 0 auto;
 }
 
 .grid {
+  padding-top: 45px;
   display: grid;
   gap: 9rem;
 }
@@ -157,7 +169,7 @@ input, textarea{
     cursor: pointer;
     }
 
-${"" /*@media (max-width: ${({ theme }) => theme.media.tab}) {
+$@media (max-width: ${({ theme }) => theme.media.tab}) {
     .container {
     max-width: 130rem;
     padding: 0 3.2rem;
@@ -168,15 +180,14 @@ ${"" /*@media (max-width: ${({ theme }) => theme.media.tab}) {
        html {
       font-size: 50%;
     }
-    */
-}
-.grid{
-  gap: 3.2rem;
-}
-      .grid-two-column , .grid-three-column, .grid-four-column{
-          grid-template-columns: 1fr;
-        }
+    
+    .grid{
+      gap: 3.2rem;
     }
+    .grid-two-column , .grid-three-column, .grid-four-column{
+      grid-template-columns: 1fr;
+    }
+}
 
 `;
 

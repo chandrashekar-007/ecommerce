@@ -4,30 +4,31 @@ export const Button = styled.button`
 
     text-decoration: none;
     margin-top: 3rem;
-    background-color: 'purple';
-    color: rgb(234 34 56);
+    background-color: ${({theme})=>theme.colors.purple};
+    color:  ${({theme})=>theme.colors.white};
     padding: 2rem 2.5rem;
     border: none;
+    outline: none;
     text-transform: uppercase;
     text-align: center;
-    cursor: pointer'
+    cursor: pointer;
     transition: all 0.5s linear;
-    text-size: 2rem;
-    width: 100px:
-    height: 50px;
+    font-size: 2.3rem;
     border-radius: 10px; 
 
     &:hover,
     &:active{
-        box-shadow: 0 0.3rem 0.3rem 0 rgba(132 144 255 / 30%);
+        box-shadow: 0 1.3rem 1.3rem 0 rgba(132 144 255 / 30%);
         box-shadow: ${({theme})=> theme.colors.shadowSupport};
-        transform : scale(1);
+        transform : scale(0.95);
+        cursor: pointer;
+        color: ${({theme})=> theme.colors.white};
 
     }
     a{
         text-decoration: none;
         color: #fff;
-        font-size: 2rem;
+        font-size: 2.3rem;
     }
 
 `;

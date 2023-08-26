@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className={menu ? "navbar active": "navbar" }>
             <ul className='navbar-lists'>
                 <li>
-                    <NavLink className='navbar-link home-link' to='/home' onClick={()=>setMenu(false)} >
+                    <NavLink className='navbar-link home-link' to='/' onClick={()=>setMenu(false)} >
                         Home
                     </NavLink>
                 </li>
@@ -63,19 +63,21 @@ const NavbarStyle = styled.nav`
         .navbar-link{
             &:link,
             &:visited{
-                font-size: 1.5rem;
-                color: ${({theme})=> theme.colors.black};
+                font-size: 2.3rem;
+                color: #212528;
                 transition: color 0.3s linear;
                 transition: transform 0.3s linear;
                 display: inline-block;
                 text-decoration: none;
-                font-weight: 500;
+                font-weight: 600;
+                letter-spacing: 2px;
                 text-transform: uppercase;
+            
             }
                 
             &:hover,
             &:active{
-                color:${({theme})=> theme.colors.helper};
+                color:${({theme})=> theme.colors.purple};
                 transform: translateY(-2px);
             }
         }
@@ -203,7 +205,7 @@ const NavbarStyle = styled.nav`
                             
                     &:hover,
                     &:active{
-                        color:${({theme})=> theme.colors.helper};
+                        color:${({theme})=> theme.colors.purple};
                         transform: translateY(-2px);
                     }
                 }
