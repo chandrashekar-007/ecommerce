@@ -1,39 +1,86 @@
 import './App.css';
 import './index.css';
-import {BrowserRouter as Router , Routes , Route} from 'react-router-dom'
+import axios from 'axios';
+import React,{useEffect , useReducer}  from 'react';
+import { Routes , Route} from 'react-router-dom'
 import Home from './components/frontpage/Home';
-import About from './components/About';
-import Products from './components/Products';
-import Contact from './components/Contact';
-import Singleproduct from './components/Singleproduct';
-import Errorpage from './components/Errorpage';
-import Cart from './components/Cart';
-import {Globalstyle} from './Globalstyle';
+import About from './components/About/About';
+import Product from './components/Products/Product';
+import Contact from './components/Contact/Contact';
+import Singleproduct from './components/Products/Singleproduct';
+import Errorpage from './components/Error/Errorpage';
+import Cart from './components/Products/Cart';
+import {Globalstyle} from './components/Styles/Globalstyle';
 import { ThemeProvider } from 'styled-components';
 import Header from './components/frontpage/Header';
+import Footer from './components/frontpage/Footer';
+import { data } from './components/Context/Content';
+import reducer from './components/redux/Reducer';
 
 
 function App() {
 
+
+  //fetching data using axios
+  const API= 'https://api.pujakaitem.com/api/products'
+
+    let initialstate = {
+        isLoading: false,
+        isError: false,
+        products: [],
+        featureProducts: []
+      };
+     
+     
+      const [state, dispatch] = useReducer(reducer , initialstate);
+    
+    
+      const fetchData = async (url)=>{
+        dispatch({type: 'API_LOADING'});
+       try {
+            const res = await axios.get(url);
+	        const products = await res.data;
+	        console.log(products)
+            dispatch({type:'SET_DATA', payload:products})
+        } catch (error) {
+            dispatch({type:'API_ERROR'});
+        }
+
+      }  
+
+      useEffect(() => {
+        fetchData(API);
+      }, [])
+
+
+
+
+  
+  const title ={
+    shop: 'Shopezee Bazaar',
+    query:'for any query',
+  }
+  
+  
   return (
     <>
+    <data.Provider value={{title, ...state}}>
     <ThemeProvider theme={theme}>
-      <Router>
         <Globalstyle/>
         <Header/>
         <Routes>
             <Route exact path = '/' element={<Home/>}/>
             <Route exact path = '/about' element={<About/>}/>
-            <Route exact path = '/products/:id' element={<Products/>}/>
+            <Route exact path = '/product/:id' element={<Product/>}/>
             <Route exact path = '/contact' element={<Contact/>}/>
             <Route exact path = '/cart' element={<Cart/>}/>
             <Route exact path = '/singleproduct' element={<Singleproduct/>}/>
             <Route exact path = '*' element={<Errorpage/>}/>
-
-        </Routes>
-      </Router>
+        </Routes> 
+        <Footer/>
     </ThemeProvider>  
-    </>
+    </data.Provider>
+    </> 
   );
 };
 
@@ -62,8 +109,10 @@ const theme ={
 
   media:{
     mobile:"768px",
-    tab:"998px"
+    tab:"998px",
+    bigtab:"1400px"
   },
   };
 
 export default App;
+export {data}

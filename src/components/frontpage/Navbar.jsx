@@ -23,7 +23,7 @@ const Navbar = () => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink className='navbar-link' to='/products/:id' >
+                    <NavLink className='navbar-link' to='/product/:id' >
                         Products
                     </NavLink>
                 </li>
@@ -106,10 +106,11 @@ const NavbarStyle = styled.nav`
         }
         
         .cart-total--item{
-            width: 2.2rem;
-            height: 2.2rem;
+            width: 2.3rem;
+            height: 2.3rem;
             position: absolute;
             background-color: #000;
+            font-size: 1rem;
             color: #000;
             border-radius: 50%;
             display: grid;
@@ -222,11 +223,11 @@ const NavbarStyle = styled.nav`
                 }
                 
                 .cart-total--item{
-                    width: 2.2rem;
-                    height: 2.2rem;
+                    width: 2.3rem;
+                    height: 2.3rem;
                     position: absolute;
                     color: #ff0;
-                    font-size:15px;
+                    font-size:2rem;
                     border-radius: 50%;
                     display: grid;
                     place-items: center;

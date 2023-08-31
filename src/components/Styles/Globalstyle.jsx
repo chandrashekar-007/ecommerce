@@ -3,17 +3,17 @@ import { createGlobalStyle } from "styled-components";
 export const Globalstyle = createGlobalStyle`
 
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
-  font-family: "Work Sans", sans-serif;
-}
-
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  }
 
 html {
   font-size: 62.5%;
-  /* scroll-behavior: smooth; */
-  /* 1rem = 10px */
+  scroll-behavior: smooth; 
+  1rem = 10px
   overflow-x: hidden;
 }
 
@@ -23,26 +23,32 @@ body {
 scrollbar-width: thin;*/}
 }
 
-body::-webkit-scrollbar {
-  width: 1.5rem;
+::-webkit-scrollbar {
+  width: 2rem;
 }
 
-body::-webkit-scrollbar-track {
-   background-color: rgb(24 24 29);
+::-webkit-scrollbar-track {
+   background-color:  ${({ theme }) => theme.colors.bg};
+   border: .9px solid black;
 }
 
-body::-webkit-scrollbar-thumb {
- 
-  background: #fff;
-    border: 5px solid transparent;
-    border-radius: 9px;
-    background-clip: content-box;
+::-webkit-scrollbar-thumb {
+  
+  background: ${({theme})=> theme.colors.purple};
+  border: .6rem solid transparent;
+  border-radius: 2rem;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: ${({ theme }) => theme.colors.white};
 }
 
 h1,
 h2,
 h3,
-h4 {
+h4,
+p {
    font-family: "Montserrat", sans-serif;
 
 }
@@ -50,24 +56,24 @@ h4 {
 h1 {
   color: ${({ theme }) => theme.colors.heading};
   font-size: 6rem;
-  font-weight: 900;
+  font-weight: 800;
 }
 
  h2 {
    color: ${({ theme }) => theme.colors.heading};
-   font-size: 4.4rem;
-   font-weight: 300;
+   font-size: 4rem;
+   font-weight: 500;
    white-space: normal;
   
   }
 
 h3 {
-  font-size: 1.8rem;
-  font-weight: 400;
+  font-size: 3.5rem;
+  font-weight: 300;
 }
 
 p{
-  font-size: 2rem;
+  font-size: 3.2rem;
 }
  button {
   align-items: center;
@@ -96,7 +102,7 @@ ${"" /* resuable code section  */}
 
 .container {
   margin-top:30px;
-  max-width: 120rem;
+  max-width: 215rem;
   margin: 0 auto;
 }
 
@@ -111,8 +117,13 @@ ${"" /* resuable code section  */}
 
 }
 
-.grid-three-column {
+.grid-three-column{
   grid-template-columns: repeat(3, 1fr);
+
+}
+
+.grid-four-column1 {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .grid-four-column{
@@ -149,29 +160,37 @@ ${"" /* resuable code section  */}
     }
 
 input, textarea{
-    max-width: 50rem;
+    margin: 0 -10rem;
+    max-width: 80rem;
     color: ${({ theme }) => theme.colors.black};
     padding: 1.6rem 2.4rem;
-    border: 1px solid ${({ theme }) => theme.colors.border};
-    text-transform: uppercase;
-   box-shadow: ${({ theme }) => theme.colors.shadowSupport};
+    border: 1px solid ${({ theme }) => theme.colors.purple};
+    box-shadow: ${({ theme }) => theme.colors.shadowSupport};
+    font-size: 3rem;
+
 }
     input[type="submit"]{
     max-width: 16rem;
     margin-top: 2rem;
-    background-color: ${({ theme }) => theme.colors.btn};
+    background-color: ${({ theme }) => theme.colors.purple};
     color: ${({ theme }) => theme.colors.white};
     padding: 1.4rem 2.2rem;
     border-style: solid;
     border-width: .1rem;
     text-transform: uppercase;
-    font-size: 1.8rem;
+    font-size: 3rem;
     cursor: pointer;
     }
 
-$@media (max-width: ${({ theme }) => theme.media.tab}) {
+$@media (max-width: ${({ theme }) => theme.media.bigtab}) {
     .container {
-    max-width: 130rem;
+    max-width: 140rem;
+    padding: 0 3.2rem;
+  }
+  }
+@media (max-width: ${({ theme }) => theme.media.tab}) {
+    .container {
+    max-width: 100rem;
     padding: 0 3.2rem;
   }
   }

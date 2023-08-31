@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import {Button} from './Button';
+import {Button} from '../Styles/Button';
 
 const HeroSection = () => {
   return (
@@ -10,7 +10,7 @@ const HeroSection = () => {
             <div className='grid grid-two-column'>
                 <div className='hero-section-data'>
                     <p className='intro-data'>Welcome to</p>
-                    <h2><i>Shopezee Store</i></h2>
+                    <h1><i>Shopezee Store</i></h1>
                     <p>Buy your favourite items on exclusive range and get the best offers and deals. Here you can get wide variety of items at reasonable prices</p>
                     <NavLink className='cursor'>
                         <Button>Shop now</Button>
@@ -32,11 +32,11 @@ const HeroSection = () => {
 const Wrapper = styled.section`
 ${''/*background-color: rgb(105 104 104 / 6%);*/}
 
-padding: 4rem 15rem;
+padding: 7rem 10rem;
 
 img {
   min-width: 30rem;
-  height: 30rem;
+  height: 40rem;
 }
 
 .hero-section-data {

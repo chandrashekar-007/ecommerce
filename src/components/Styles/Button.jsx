@@ -12,8 +12,8 @@ export const Button = styled.button`
     text-transform: uppercase;
     text-align: center;
     cursor: pointer;
-    transition: all 0.5s linear;
-    font-size: 2.3rem;
+    transition: all 0.3s linear;
+    font-size: 3.3rem;
     border-radius: 10px; 
 
     &:hover,
@@ -28,7 +28,7 @@ export const Button = styled.button`
     a{
         text-decoration: none;
         color: #fff;
-        font-size: 2.3rem;
+        font-size: 3.3rem;
     }
 
 `;
