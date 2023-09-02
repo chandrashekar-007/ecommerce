@@ -26,32 +26,46 @@ function App() {
 
     let initialstate = {
         isLoading: false,
+        isSingleLoading: false,
         isError: false,
         products: [],
-        featureProducts: []
+        featureProducts: [],
+        singleProduct: {}
       };
      
      
       const [state, dispatch] = useReducer(reducer , initialstate);
     
-    
+    // fetching complete data
       const fetchData = async (url)=>{
         dispatch({type: 'API_LOADING'});
        try {
             const res = await axios.get(url);
 	        const products = await res.data;
-	        console.log(products)
-            dispatch({type:'SET_DATA', payload:products})
+            dispatch({type:'SET_FETCH_DATA', payload:products})
         } catch (error) {
             dispatch({type:'API_ERROR'});
         }
 
       }  
 
+      // calling the fuction on every page load
       useEffect(() => {
         fetchData(API);
       }, [])
 
+      // fetching single data
+      const getSingleProduct = async (url)=>{
+        dispatch({type:'SINGLE_API_LOADING'})
+          try {
+	        const res = await axios.get(url);
+	        const singleProduct = await res.data;
+          dispatch({type: 'SINGLE_API_DATA', payload:singleProduct})
+	        }
+          catch (error) {
+            dispatch({type:'SINGLE_API_ERROR'})
+          }
+          } ;
 
 
 
@@ -64,7 +78,7 @@ function App() {
   
   return (
     <>
-    <data.Provider value={{title, ...state}}>
+    <data.Provider value={{title, ...state ,getSingleProduct, API }}>
     <ThemeProvider theme={theme}>
         <Globalstyle/>
         <Header/>
@@ -74,7 +88,7 @@ function App() {
             <Route exact path = '/product/:id' element={<Product/>}/>
             <Route exact path = '/contact' element={<Contact/>}/>
             <Route exact path = '/cart' element={<Cart/>}/>
-            <Route exact path = '/singleproduct' element={<Singleproduct/>}/>
+            <Route exact path = '/singleproduct/:id' element={<Singleproduct/>}/>
             <Route exact path = '*' element={<Errorpage/>}/>
         </Routes> 
         <Footer/>

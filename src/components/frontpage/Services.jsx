@@ -28,10 +28,10 @@ const Services = () => {
                   </div>
                 </div>
                 <div className="service-4">
-                    <div>
-                        <RiSecurePaymentLine className='icon'/>
-                        <h2>Super Secure Payment</h2>
-                    </div>
+                  <div>
+                    <RiSecurePaymentLine className='icon'/>
+                    <h2>Super Secure Payment</h2>
+                  </div>
                 </div>
             </div>
         </div>

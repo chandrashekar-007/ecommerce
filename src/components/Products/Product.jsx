@@ -1,6 +1,5 @@
-import React from 'react';
-// import { styled } from 'styled-components';
 import {NavLink} from 'react-router-dom';
+import PriceConverter from './PriceConverter';
 
 const Product = (elem) => {
 
@@ -16,11 +15,11 @@ const Product = (elem) => {
               {category}
             </figcaption>
           </figure>
-
+          <hr/>
           <div className="card-data">
             <h3>{name}</h3>
             <p className="card-data--price">
-              {price}
+              <PriceConverter price={price}/>
             </p>
           </div>
         </div>

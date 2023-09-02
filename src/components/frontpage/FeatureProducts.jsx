@@ -23,7 +23,8 @@ const FeatureProducts = () => {
             <div className="grid grid-three-column">
                 {
                     featureProducts.map((elem)=>{
-                        return <Product key={elem.id} {...elem}/>;
+                      console.log(elem)
+                      return <Product key={elem.id} {...elem}/>
                     })
                 }
             </div>
@@ -34,11 +35,11 @@ const FeatureProducts = () => {
 
 const Wrapper = styled.section`
 
-padding: 5rem 2rem;
+padding: 8rem 5rem;
 background-color: ${({ theme }) => theme.colors.bg};
 
 .container {
-  max-width: 120rem;
+  max-width: 138rem;
 }
 
 .text-center{
@@ -80,13 +81,13 @@ figure {
 
   .caption {
     position: absolute;
-    top: 15%;
-    right: 10%;
+    top: 5%;
+    right: 5%;
     text-transform: uppercase;
     background-color: ${({ theme }) => theme.colors.bg};
-    color: ${({ theme }) => theme.colors.helper};
+    color: ${({ theme }) => theme.colors.black};
     padding: 0.8rem 2rem;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     border-radius: 2rem;
   }
 }
@@ -98,19 +99,15 @@ figure {
   height: 30rem;
 
   .card-data {
-    padding: 1rem 3rem;
-    margin: 2rem 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   }
 
-  h2 {
-    color: ${({ theme }) => theme.colors.text};
+  h3 {
     text-transform: capitalize;
 }
   p{
-      
       font-size: 3rem;
   }
 
@@ -138,7 +135,11 @@ figure {
     }
   }
 
-
+  hr {
+    margin: 1rem auto;
+    color: ${({ theme }) => theme.colors.hr};
+    height: 0.1px;
+  }
 }
 `;
 

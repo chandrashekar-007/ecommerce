@@ -15,13 +15,13 @@ const Footer = () => {
               <div className="footer-2">
                 <h3>Get connected with us</h3>
                 <div className="footer-2--icons">
-                  <div><a href="http://" target="_blank" rel="noopener noreferrer"><FaLinkedin className='icons'/></a>
+                  <div><a href="http://www.linkedin.com/in/chandra-shekar-73a4841aa/" target="_blank" rel="noopener noreferrer"><FaLinkedin className='icons'/></a>
                   </div>
-                  <div><a href="http://" target="_blank" rel="noopener noreferrer"><FaGithub className='icons'/></a>
+                  <div><a href="http://github.com/chandrashekar-007/" target="_blank" rel="noopener noreferrer"><FaGithub className='icons'/></a>
                   </div>
-                  <div><a href="http://" target="_blank" rel="noopener noreferrer"><FaFacebook className='icons'/></a>
+                  <div><a href="http://www.facebook.com/shekhar.rana.19870510/" target="_blank" rel="noopener noreferrer"><FaFacebook className='icons'/></a>
                   </div>
-                  <div><a href="http://" target="_blank" rel="noopener noreferrer"><FaInstagram className='icons'/></a>
+                  <div><a href="http://www.instagram.com/er.shekhar_rana/" target="_blank" rel="noopener noreferrer"><FaInstagram className='icons'/></a>
                   </div>
                 </div>
               </div>

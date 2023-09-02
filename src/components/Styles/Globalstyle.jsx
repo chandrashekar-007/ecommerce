@@ -24,7 +24,7 @@ scrollbar-width: thin;*/}
 }
 
 ::-webkit-scrollbar {
-  width: 2rem;
+  width: 3rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -102,7 +102,7 @@ ${"" /* resuable code section  */}
 
 .container {
   margin-top:30px;
-  max-width: 215rem;
+  max-width: 250rem;
   margin: 0 auto;
 }
 

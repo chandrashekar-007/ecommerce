@@ -43,8 +43,12 @@ const Wrapper = styled.section`
 }
 .form{
   padding: 3rem 0;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+
 
 h2{
   margin-bottom: 5rem;
