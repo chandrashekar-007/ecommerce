@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import styled from 'styled-components';
 
 const SingleProductImage = ({image = [{url:""}]}) => {
-  const [mainImage, setMainImage] = useState(image[0])
+  const [mainImage, setMainImage] = useState(image[0]);
 
   return (
     <Wrapper>
@@ -32,6 +32,9 @@ const SingleProductImage = ({image = [{url:""}]}) => {
 
 const Wrapper = styled.image`
 
+display: flex;
+align-items: center;
+
 font-size: 4rem;
 .container{
   display: flex;
@@ -41,6 +44,13 @@ font-size: 4rem;
   align-items: center;
 }
 
+figure{
+  cursor: pointer;
+
+  &:hover{
+    transform: scale(1.2);
+  }
+}
 .sub-images{
   display: flex;
   flex-direction: column;

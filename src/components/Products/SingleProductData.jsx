@@ -6,6 +6,7 @@ import {MdSecurity} from 'react-icons/md';
 import {GiReceiveMoney} from 'react-icons/gi';
 import Stars from './Stars';
 import ProductColors from './ProductColors';
+import AddToCart from './AddToCart';
 
 const SingleProductData = ({singleProduct}) => {
 
@@ -89,6 +90,9 @@ const SingleProductData = ({singleProduct}) => {
         <div className="product-colors">
          {stock > 0 && <ProductColors colors={colors}/>}
         </div>
+        <div className="add-to-cart">
+         <AddToCart stock={stock} />
+        </div>
       </div>
     </Wrapper>
   )
@@ -138,6 +142,12 @@ padding-left: 3rem;
       flex-direction: column;
       gap: 2rem;
       justify-content: center;
+    }
+
+    .add-to-cart{
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
     }
 
     .font{

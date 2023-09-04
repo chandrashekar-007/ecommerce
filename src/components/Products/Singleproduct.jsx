@@ -34,7 +34,7 @@ const Singleproduct = () => {
       </div>
       <div className="container">
         <div className="gridi grid-two-column">
-          <SingleProductImage className='image-center' image = {image}/>
+          <SingleProductImage image = {image}/>
           <SingleProductData singleProduct={singleProduct}/>
         </div>
       </div>
@@ -65,16 +65,15 @@ const Wrapper = styled.section`
     .gridi{
       display: grid;
       gap:10rem;
-
-      .image-center{
-        display: flex;
-
-      }
+      
     }
   
-  
   }
+  .image-center{
+    display: flex;
+    align-items: center;
 
+  }
     hr {
       max-width: 100%;
       width: 100%;
