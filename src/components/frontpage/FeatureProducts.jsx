@@ -1,7 +1,7 @@
 import React,{useContext} from 'react'
 import styled from 'styled-components';
 import { data } from '../Context/Content'
-import Product from '../Products/Product';
+import Product from '../ProductPage/Product';
 
 const FeatureProducts = () => {
 

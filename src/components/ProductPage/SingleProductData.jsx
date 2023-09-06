@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import CartQuantity from './CartQuantity';
+import {NavLink} from 'react-router-dom';
 import PriceConverter from './PriceConverter';
 import {TbTruckDelivery,TbReplace} from 'react-icons/tb';
 import {MdSecurity} from 'react-icons/md';
 import {GiReceiveMoney} from 'react-icons/gi';
 import Stars from './Stars';
 import ProductColors from './ProductColors';
-import AddToCart from './AddToCart';
+import {Button} from '../Styles/Button';
 
 const SingleProductData = ({singleProduct}) => {
 
@@ -91,8 +93,22 @@ const SingleProductData = ({singleProduct}) => {
          {stock > 0 && <ProductColors colors={colors}/>}
         </div>
         <div className="add-to-cart">
-         <AddToCart stock={stock} />
+         <CartQuantity stock={stock} />
         </div>
+        {stock <= 0 ? 
+        (<div className="cart-btn" disabled> 
+         <Button>
+          Add To Cart
+         </Button>
+        </div>) : 
+        (<div className="cart-btn">
+          <NavLink to='/cart'>
+            <Button>
+              Add To Cart
+          </Button>
+          </NavLink>
+        </div>)
+        }
       </div>
     </Wrapper>
   )

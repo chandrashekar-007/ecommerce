@@ -51,7 +51,7 @@ const Footer = () => {
 
 const Wrapper = styled.section`
 
-
+margin-top: auto;
 section,
 .sc-pqitP bYjqDD,
 .foot{

@@ -3,10 +3,10 @@ import PriceConverter from './PriceConverter';
 
 const Product = (elem) => {
 
-
   const {id , image , name, price , category} = elem;
 
   return (
+    <>
       <NavLink to={`/singleproduct/${id}`}>
         <div className="card">
           <figure>
@@ -24,8 +24,11 @@ const Product = (elem) => {
           </div>
         </div>
       </NavLink>
+    
+    </>
   )
 }
+
 
 
 

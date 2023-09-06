@@ -23,7 +23,7 @@ const Navbar = () => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink className='navbar-link' to='/product/:id' >
+                    <NavLink className='navbar-link' to='/products' >
                         Products
                     </NavLink>
                 </li>

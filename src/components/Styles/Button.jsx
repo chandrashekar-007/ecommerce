@@ -3,7 +3,7 @@ import { styled } from 'styled-components'
 export const Button = styled.button`
 
     text-decoration: none;
-    margin-top: 3rem;
+    margin-top: 5rem;
     background-color: ${({theme})=>theme.colors.purple};
     color:  ${({theme})=>theme.colors.white};
     padding: 2rem 2.5rem;
@@ -13,7 +13,7 @@ export const Button = styled.button`
     text-align: center;
     cursor: pointer;
     transition: all 0.3s linear;
-    font-size: 3.3rem;
+    font-size: 4.3rem;
     border-radius: 10px; 
 
     &:hover,

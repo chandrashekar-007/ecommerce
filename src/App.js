@@ -5,11 +5,12 @@ import React,{useEffect , useReducer}  from 'react';
 import { Routes , Route} from 'react-router-dom'
 import Home from './components/frontpage/Home';
 import About from './components/About/About';
-import Product from './components/Products/Product';
+import Products from './components/ProductPage/Products';
+import Product from './components/ProductPage/Product';
 import Contact from './components/Contact/Contact';
-import Singleproduct from './components/Products/Singleproduct';
+import Singleproduct from './components/ProductPage/Singleproduct';
 import Errorpage from './components/Error/Errorpage';
-import Cart from './components/Products/Cart';
+import Cart from './components/ProductPage/Cart';
 import {Globalstyle} from './components/Styles/Globalstyle';
 import { ThemeProvider } from 'styled-components';
 import Header from './components/frontpage/Header';
@@ -86,6 +87,7 @@ function App() {
             <Route exact path = '/' element={<Home/>}/>
             <Route exact path = '/about' element={<About/>}/>
             <Route exact path = '/product/:id' element={<Product/>}/>
+            <Route exact path = '/products/' element={<Products/>}/>
             <Route exact path = '/contact' element={<Contact/>}/>
             <Route exact path = '/cart' element={<Cart/>}/>
             <Route exact path = '/singleproduct/:id' element={<Singleproduct/>}/>
@@ -102,7 +104,7 @@ const theme ={
   colors : {
     heading:"rgba(25,25,29)",
     text:"rgba(29,29,29,.8)",
-    purple: 'rgba(170,108,205,0.8)',
+    purple: "#8e24cacc",
     white:"#fff",
     black:"#212528",
     helper:"#8490ff",
