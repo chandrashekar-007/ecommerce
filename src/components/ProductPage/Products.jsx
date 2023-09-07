@@ -8,22 +8,22 @@ import { data } from '../Context/Content';
 const Products = () => {
 
   const { products } = useContext(data);
-  console.log(products);
+  
 
   return (
 
     <Wrapper>
     <div className="container">
-      <div className="grid grid-two-column">
+      <div className="grid grid-two-columns">
         <div className="filter">
-          <FilterSection/>
+          <FilterSection products={products}/>
         </div>
         <div className="sort-list">
           <div className="sort">
             <SortedSection products={products}/>
           </div>
           <div className="list">
-            <ListSection/>
+            <ListSection products={products}/>
           </div>
         </div>
       </div>
@@ -37,6 +37,11 @@ const Wrapper = styled.section`
 
 
 font-size: 4rem;
+
+.grid-two-columns{
+  grid-template-columns: 0.3fr 1fr;
+}
+
 
 `; 
 
